@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # Runs daily on tilion: scrape DAXBench, commit the CSV to the public data repo if it changed.
-# Assumes the repo is cloned at ~/ai-frontier-data with push access.
+# Assumes the repo is cloned at ~/Projects/ai-frontier-data with push access.
 set -euo pipefail
-REPO="$HOME/ai-frontier-data"
+REPO="$HOME/Projects/ai-frontier-data"
 cd "$REPO"
 git pull -q --ff-only
 python3 "$REPO/scripts/daxbench_scrape.py" "$REPO/data/daxbench.csv.new"
